@@ -1,11 +1,13 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
-import Alert from './components/Alert';
-import Button from './components/Button';
+// import Alert from './components/Alert';
+// import Button from './components/Button';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 // import ListGroup from './components/ListGroup';
 
 function App() {
-    const [alertVisible, setAlertVisibility] = useState(false);
+    // const [alertVisible, setAlertVisibility] = useState(false);
     // const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
     // const handleSelectItem = (item: string) => {
@@ -14,13 +16,15 @@ function App() {
 
     return (
         <div>
-            { alertVisible &&
+            <Navbar></Navbar>
+            <Home></Home>
+            {/* { alertVisible &&
                 <Alert onClose={() => setAlertVisibility(false)}>
                     Yes <span>ya</span>
                 </Alert>
-            }
+            } */}
 
-            <Button onClick={() => setAlertVisibility(true)}>A button</Button>
+            {/* <Button onClick={() => setAlertVisibility(true)}>A button</Button> */}
             {/* <ListGroup items={items} heading="Items" onSelectItem={handleSelectItem} /> */}
         </div>
     );
