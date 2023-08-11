@@ -1,27 +1,21 @@
 import React from 'react';
 import GameCard from './GameCard';
+import { GameResult } from '../models/GameModel';
 
-const gameList = [
-    {
-        title: 'Game 1',
-    },
-    {
-        title: 'Game 2',
-    },
-    {
-        title: 'Game 3',
-    },
-];
+interface Props {
+    games: GameResult[];
+}
 
-const GameRow = () => {
+const GameRow = ({ games }: Props) => {
+    console.log('games > ', games);
     return (
         <>
             <h2>Game row header</h2>
 
             <div className='row row-cols-1 row-cols-md-5 g-3'>
-                {gameList.map((game) => (
+                {games.map((game) => (
                     <div className='col'>
-                        <GameCard title={game.title}></GameCard>
+                        <GameCard {...game}></GameCard>
                     </div>
                 ))}
             </div>
@@ -29,9 +23,9 @@ const GameRow = () => {
             <h2 className='mt-4'>Some other game row</h2>
 
             <div className='row row-cols-1 row-cols-md-5 g-3'>
-                {gameList.map((game) => (
+                {games.map((game) => (
                     <div className='col'>
-                        <GameCard title={game.title}></GameCard>
+                        <GameCard {...game}></GameCard>
                     </div>
                 ))}
             </div>

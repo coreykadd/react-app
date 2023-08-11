@@ -1,10 +1,10 @@
+import { GameResponse } from "../models/GameModel";
 import { ApiService } from "./ApiService";
-
 
 class GameService {
     constructor() { }
 
-    getGamesList() {
+    getGamesList(): Promise<GameResponse> {
         return ApiService.get('/games');
     }
 }

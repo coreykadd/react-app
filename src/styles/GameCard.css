@@ -3,8 +3,18 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    min-height: 22rem;
+}
+
+.card-img-top {
+    height: 9rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
 }
 
 .details-button {
-    float: right;
+    margin-top: auto;
 }

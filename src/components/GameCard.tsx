@@ -1,19 +1,16 @@
 import React from 'react';
 import '../styles/GameCard.css'
+import { GameResult } from '../models/GameModel';
 
-interface Game {
-    title: string;
-}
-
-const GameCard = ({ title }: Game) => {
+const GameCard = (game : GameResult) => {
     return (
         <>
             <div className='card game-card'>
-                <img src='https://fakeimg.pl/300x150/' className='card-img-top' alt='...' />
+                <img src={game.short_screenshots[0].image} className='card-img-top' alt='...' />
                 <div className='card-body'>
-                    <h5 className='card-title'>{title}</h5>
+                    <h5 className='card-title'>{game.name}</h5>
                     <p className='card-text'>
-                        Platforms: PC, Xbox Series X, Ps5, Switch
+                        Platforms: { game.parent_platforms.map((platform) => ( platform.platform.name + ', ' )) }
                     </p>
                     <a href='#' className='btn btn-primary details-button'>
                         Details
