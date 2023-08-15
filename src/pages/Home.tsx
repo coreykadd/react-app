@@ -18,7 +18,9 @@ const Home = () => {
 
         const source = axios.CancelToken.source();
         console.log('here');
-        getGamesList();
+        if (games.length === 0) {
+            getGamesList();
+        }
 
         return () => {
             source.cancel();
