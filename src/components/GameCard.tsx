@@ -11,8 +11,8 @@ const GameCard = (game: GameResult) => {
                 <div className='card-body'>
                     <h5 className='card-title'>{game.name}</h5>
                     <p className='card-text'>Platforms: {game.parent_platforms.map((platform) => platform.platform.name + ', ')}</p>
-                    <Link to='/details'>
-                        <a className='btn btn-primary details-button'>Details</a>
+                    <Link to='/details' className='btn btn-primary details-button'>
+                        Details
                     </Link>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useRoutes } from 'react-router-dom';
+import { Router, Routes, Route, Outlet } from 'react-router-dom';
 import './App.css';
 // import Alert from './components/Alert';
 // import Button from './components/Button';
@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import GameDetails from './pages/GameDetails';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Genres from './pages/Genres';
 // import ListGroup from './components/ListGroup';
 
 function App() {
@@ -17,19 +18,16 @@ function App() {
     //     console.log('item > ', item);
     // };
 
-    const routing = useRoutes([
-        { path: '/', element: <Home /> },
-        { path: '/details', element: <GameDetails /> },
-        { path: '*', element: <NotFound /> }, // Default route for unmatched paths
-      ]);
-
     return (
         <>
             <Navbar></Navbar>
 
-            <Router>
-                {routing}
-            </Router>
+            <Routes>
+                <Route path='/' element={<Home />}></Route>
+                <Route path='/gameDetails' element={<GameDetails />} />
+                <Route path='/genres' element={<Genres />} />
+                <Route path='*' element={<NotFound />} /> {/* 404 Not Found */}
+            </Routes>
 
             {/* <Home></Home> */}
             {/* { alertVisible &&
