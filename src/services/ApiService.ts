@@ -9,7 +9,7 @@ const instance: AxiosInstance = axios.create({
 });
 
 export const ApiService = {
-    get: async (endpoint: string, params?: string) => {
+    get: async (endpoint: string, params?: Record<string, string | number>) => {
         try {
             const response = await instance.get(`${endpoint}`, {
                 params

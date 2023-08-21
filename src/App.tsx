@@ -24,7 +24,7 @@ function App() {
 
             <Routes>
                 <Route path='/' element={<Home />}></Route>
-                <Route path='/gameDetails' element={<GameDetails />} />
+                <Route path='/details/:id' element={<GameDetails />} />
                 <Route path='/genres' element={<Genres />} />
                 <Route path='*' element={<NotFound />} /> {/* 404 Not Found */}
             </Routes>
