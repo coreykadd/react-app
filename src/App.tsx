@@ -8,6 +8,7 @@ import GameDetails from './pages/GameDetails';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Genres from './pages/Genres';
+import SearchResults from './pages/SearchResults';
 // import ListGroup from './components/ListGroup';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/details/:id' element={<GameDetails />} />
                 <Route path='/genres' element={<Genres />} />
+                <Route path='/search' element={<SearchResults />} />
                 <Route path='*' element={<NotFound />} /> {/* 404 Not Found */}
             </Routes>
 

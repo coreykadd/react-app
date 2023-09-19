@@ -20,7 +20,7 @@ const GameRow = ({ games }: Props) => {
                 ))}
             </div>
 
-            <h2 className='mt-4'>Some other game row</h2>
+            {/* <h2 className='mt-4'>Some other game row</h2>
 
             <div className='row row-cols-1 row-cols-md-5 g-3'>
                 {games.map((game) => (
@@ -28,7 +28,7 @@ const GameRow = ({ games }: Props) => {
                         <GameCard {...game}></GameCard>
                     </div>
                 ))}
-            </div>
+            </div> */}
         </>
     );
 };
