@@ -4,8 +4,8 @@ import { ApiService } from "./ApiService";
 class GameService {
     constructor() { }
 
-    getGamesList(): Promise<GameResponse> {
-        return ApiService.get('/games');
+    getGamesList(params = {}): Promise<GameResponse> {
+        return ApiService.get('/games', params);
     }
 
     getGameDetails(gameId: string): Promise<Game> {

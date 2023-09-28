@@ -4,31 +4,22 @@ import { GameResult } from '../models/GameModel';
 
 interface Props {
     games: GameResult[];
+    rowHeader?: string;
 }
 
-const GameRow = ({ games }: Props) => {
+const GameRow = ({ games, rowHeader }: Props) => {
     console.log('games > ', games);
     return (
         <>
-            <h2>Game row header</h2>
+            <h2>{rowHeader}</h2>
 
             <div className='row row-cols-1 row-cols-md-3 row-cols-lg-5 g-3'>
                 {games.map((game) => (
-                    <div className='col'>
+                    <div className='col' key={game.id}>
                         <GameCard {...game}></GameCard>
                     </div>
                 ))}
             </div>
-
-            {/* <h2 className='mt-4'>Some other game row</h2>
-
-            <div className='row row-cols-1 row-cols-md-5 g-3'>
-                {games.map((game) => (
-                    <div className='col'>
-                        <GameCard {...game}></GameCard>
-                    </div>
-                ))}
-            </div> */}
         </>
     );
 };

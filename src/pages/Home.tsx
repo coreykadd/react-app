@@ -52,9 +52,8 @@ const Home = () => {
     return (
         <>
             <div className='container mt-2'>
-                {/* <div className='carousel-container'><Carousel></Carousel></div> */}
                 {games.length === 0 && <h1>No games found</h1>}
-                {games.length > 0 && <GameRow games={games}></GameRow>}
+                {games.length > 0 && <GameRow games={games} rowHeader='Games'></GameRow>}
             </div>
         </>
     );
