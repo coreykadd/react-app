@@ -1,4 +1,5 @@
 import { Game, GameResponse } from "../models/GameModel";
+import { GenreDetails, GenreResponse } from "../models/GenreModel";
 import { ApiService } from "./ApiService";
 
 class GameService {
@@ -12,6 +13,14 @@ class GameService {
         const params = new URLSearchParams();
         params.set('id', gameId);
         return ApiService.get(`/games/${gameId}`);
+    }
+
+    getGenres(): Promise<GenreResponse> {
+        return ApiService.get('/genres');
+    }
+
+    getGenreDetails(genreId: number): Promise<GenreDetails> {
+        return ApiService.get(`/genres/${genreId}`)
     }
 }
 
