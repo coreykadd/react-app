@@ -14,7 +14,6 @@ const Genres = () => {
         setLoading(true);
 
         const source = axios.CancelToken.source();
-        console.log('here');
         if (genres.length === 0) {
             getGenres();
         }
@@ -25,12 +24,10 @@ const Genres = () => {
     }, []);
 
     const getGenres = () => {
-        console.log('Calling getGenres');
         GameService.getGenres()
             .then((data) => {
                 setLoading(false);
                 setGenres(data.results);
-                console.log('genres data > ', data);
             })
             .catch((error) => {
                 setError(error);

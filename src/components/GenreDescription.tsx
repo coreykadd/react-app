@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/GenreDescription.css';
 import { GenreDetails } from '../models/GenreModel';
 import GameService from '../services/GameService';
 
@@ -12,11 +13,10 @@ const GenreDescription = ({ genreId }: Props) => {
 
     useEffect(() => {
         const getGenreDetails = () => {
-            console.log('Calling genre description');
             GameService.getGenreDetails(genreId)
                 .then((data) => {
+                    data.description = data.description.replace('<p>', '').replace('</p>', '');
                     setGenreDetails(data);
-                    console.log('desc data > ', data);
                 })
                 .catch((error) => {
                     setError(error);
@@ -30,8 +30,9 @@ const GenreDescription = ({ genreId }: Props) => {
 
     return (
         <>
-            <div>{genre?.name}</div>
-            <div>{genre?.description}</div>
+            <h2 className='genre-name'>{genre?.name}</h2>
+            <img src={genre?.image_background} className='genre-image'></img>
+            <p className='genre-description'>{genre?.description}</p>
         </>
     );
 };

@@ -7,7 +7,6 @@ const Navbar = () => {
 
     const handleSearch = (event: FormEvent) => {
         event.preventDefault();
-        console.log('searching > ', searchQuery);
         navigate(`/search?query=${searchQuery}`);
     };
 
@@ -15,9 +14,9 @@ const Navbar = () => {
         <>
             <nav className='navbar navbar-expand-lg bg-body-tertiary px-3'>
                 <div className='container-fluid'>
-                    <a className='navbar-brand' href='#'>
+                    <Link to='/' className='navbar-brand'>
                         Games
-                    </a>
+                    </Link>
 
                     <button
                         className='navbar-toggler'

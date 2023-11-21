@@ -14,16 +14,13 @@ const SearchResults = () => {
     const searchQuery = new URLSearchParams(location.search).get('query');
 
     useEffect(() => {
-        console.log('effect search');
         setLoading(true);
 
         const getSearchResults = () => {
-            console.log('Calling getSearchResults');
             GameService.getGamesList({ search: searchQuery })
                 .then((data) => {
                     setLoading(false);
                     setSearchResults(data.results);
-                    console.log('Search data > ', data);
                 })
                 .catch((error) => {
                     setError(error);

@@ -8,7 +8,6 @@ interface Props {
 }
 
 const GameRow = ({ games, rowHeader }: Props) => {
-    console.log('games > ', games);
     return (
         <>
             <h2>{rowHeader}</h2>

@@ -1,3 +1,19 @@
+# About project
+This project is to learn and build a react project. This will be a simple games library that shows the details of the selected game and will also show the details of the selected genre.
+
+## Home page
+![Home page](src/assets/home.png)
+
+## Search page
+![Search page](src/assets//search.png)
+
+## Details page
+![Details page](src/assets/details.png)
+
+## Genre page
+![Genre page](src/assets/genre.png)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -17,7 +17,6 @@ const Home = () => {
         setLoading(true);
 
         const source = axios.CancelToken.source();
-        console.log('here');
         if (games.length === 0) {
             getGamesList();
         }
@@ -28,12 +27,10 @@ const Home = () => {
     }, []);
 
     const getGamesList = () => {
-        console.log('Calling methos');
         GameService.getGamesList()
             .then((data) => {
                 setLoading(false);
                 setGames(data.results);
-                console.log('data > ', data);
             })
             .catch((error) => {
                 setError(error);

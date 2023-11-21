@@ -15,7 +15,6 @@ const GameDetails = () => {
         setLoading(true);
 
         const source = axios.CancelToken.source();
-        console.log('here');
         if (!game) {
             getGame();
         }
@@ -26,15 +25,12 @@ const GameDetails = () => {
     }, []);
 
     const getGame = () => {
-        console.log('Calling methos');
         GameService.getGameDetails(id as string)
             .then((data) => {
                 setLoading(false);
-                console.log('data 2 > ', data);
                 setGame(data);
             })
             .catch((error) => {
-                console.log('err > ', error);
                 setError(error);
                 setLoading(false);
             });
